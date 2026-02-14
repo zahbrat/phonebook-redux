@@ -1,18 +1,6 @@
-export const ADD_CONTACT = "ADD_CONTACT";
-export const DELETE_CONTACT = "DELETE_CONTACT";
-export const SET_FILTER = "SET_FILTER";
+import { createAction } from "@reduxjs/toolkit";
 
-export const addContact = (contact) => ({
-  type: ADD_CONTACT,
-  payload: contact,
-});
-
-export const deleteContact = (id) => ({
-  type: DELETE_CONTACT,
-  payload: id,
-});
-
-export const setFilter = (value) => ({
-  type: SET_FILTER,
-  payload: value,
-});
+export const addContact = createAction("contacts/addContact");
+export const deleteContact = createAction("contacts/deleteContact");
+export const setFilter = createAction("contacts/setFilter");
+export const updateForm = createAction("contacts/updateForm");

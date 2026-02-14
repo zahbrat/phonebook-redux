@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { nanoid } from "nanoid";
-import { addContact, deleteContact, setFilter } from "../redux/slice";
+import { addContact, deleteContact, setFilter } from "../redux/actions";
 import ContactForm from "./ContactForm";
 import ContactList from "./ContactList";
 import Filter from "./Filter";

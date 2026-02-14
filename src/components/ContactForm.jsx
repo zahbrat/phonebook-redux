@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { updateForm } from "../redux/slice";
+import { updateForm } from "../redux/actions";
 
 export default function ContactForm({ handleSubmit }) {
   const dispatch = useDispatch();

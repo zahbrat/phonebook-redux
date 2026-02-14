@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import contactsReducer from "./slice";
+import contactsReducer from "./reducer";
 
 export const store = configureStore({
   reducer: {
@@ -7,7 +7,4 @@ export const store = configureStore({
   },
 });
 
-store.subscribe(() => {
-  const state = store.getState();
-  localStorage.setItem("contacts", JSON.stringify(state.contacts.items));
-});
+export default store;

@@ -1,23 +1,23 @@
 import { useSelector, useDispatch } from "react-redux";
 import { nanoid } from "nanoid";
-import { addContact, deleteContact, setFilter } from "../redux/actions";
+import { addContact, deleteContact, setFilter } from "../redux/slice";
 import ContactForm from "./ContactForm";
 import ContactList from "./ContactList";
 import Filter from "./Filter";
 
 export default function App() {
-  const contacts = useSelector((state) => state.contacts);
-  const filter = useSelector((state) => state.filter);
+  const items = useSelector((state) => state.contacts.items);
+  const filter = useSelector((state) => state.contacts.filter);
   const dispatch = useDispatch();
 
   const handleAddContact = ({ name, number }) => {
-    if (contacts.some((c) => c.name.toLowerCase() === name.toLowerCase())) {
+    if (items.some((c) => c.name.toLowerCase() === name.toLowerCase())) {
       return alert(`${name} is already in contacts`);
     }
     dispatch(addContact({ id: nanoid(), name, number }));
   };
 
-  const filteredContacts = contacts.filter((c) =>
+  const filteredContacts = items.filter((c) =>
     c.name.toLowerCase().includes(filter.toLowerCase()),
   );
 

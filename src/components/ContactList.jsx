@@ -1,4 +1,3 @@
-import React from "react";
 import ContactEl from "./ContactEl";
 
 export default function ContactList({ contacts, deleteContact }) {
